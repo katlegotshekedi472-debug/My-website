@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blog</title>
+  <link rel="stylesheet" type="text/css" href="tshepo.css">
+</head>
+<body>
+  <div class="topbar">TALK NOW</div>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img src="tshepo logo.png" width="100"height="100">
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="service.html">Service</a>
+        <a href="our work.html">Our Work</a>
+        <a href="blog.html"class="active"aria-current="page">Blog</a>
+        <a href="contact.html">Contact</a>      </nav>
+    </div>
+  </header>
+
+ <a href="contact.html" class="quote-btn">Get a Quote</a>
+</header>
+
+<section class="hero blog-hero">
+    <div class="hero-content">
+        <h1>Our <span>Blog</span></h1>
+        <p>
+            Tips, insights and inspiration to help your brand grow.<br>
+            Discover the latest trends in design, media and creativity.
+        </p>
+    </div>
+</section>
+
+<main class="portfolio blog-section">
+
+    <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="design">Design</button>
+        <button class="filter" data-filter="video">Video</button>
+        <button class="filter" data-filter="branding">Branding</button>
+        <button class="filter" data-filter="marketing">Marketing</button>
+        <button class="filter" data-filter="tips">Tips</button>
+    </div>
+
+    <div class="blog-grid">
+
+        <article class="blog-card" data-category="branding">
+            <img src="computer.jpeg" alt="Brand identity design">
+            <div class="blog-content">
+                <span class="category">BRANDING</span>
+                <h3>How to Build a Strong Brand Identity for Your Business</h3>
+                <p>A strong brand identity helps people recognise and trust your business. Learn how consistent design can make your brand memorable.</p>
+                <div class="blog-meta">
+                    <span>20 October 2026</span>
+                    <a href="contact.html">Read More →</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="video">
+            <img src="video shooting.jpeg" alt="Professional video production">
+            <div class="blog-content">
+                <span class="category">VIDEO PRODUCTION</span>
+                <h3>The Power of Video in Today's Digital World</h3>
+                <p>Video captures attention and helps tell your story. Discover how businesses can use videos to connect with their audience.</p>
+                <div class="blog-meta">
+                    <span>21 July 2026</span>
+                    <a href="contact.html">Read More →</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="design">
+            <img src="dd.jpeg" alt="Graphic design colours and layouts">
+            <div class="blog-content">
+                <span class="category">GRAPHIC DESIGN</span>
+                <h3>5 Graphic Design Trends for Small Businesses</h3>
+                <p>From bold typography to clean layouts, explore design ideas that can help your business stand out.</p>
+                <div class="blog-meta">
+                    <span>28 September 2026</span>
+                    <a href="contact.html">Read More →</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="tips">
+            <img src="computer2.jpeg" alt="Video editing workstation">
+            <div class="blog-content">
+                <span class="category">TIPS</span>
+                <h3>Simple Tips for Better Video Editing</h3>
+                <p>Learn practical editing techniques that can help you create clear, attractive and professional-looking videos.</p>
+                <div class="blog-meta">
+                    <span>30 September 2026</span>
+                    <a href="contact.html">Read More →</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="marketing">
+            <img src="cam.jpeg" alt="Camera and creative planning notebook">
+            <div class="blog-content">
+                <span class="category">MARKETING</span>
+                <h3>How to Use Social Media to Grow Your Brand</h3>
+                <p>Share useful content, communicate with customers and build a recognisable brand through social media.</p>
+                <div class="blog-meta">
+                    <span>25 October 2026</span>
+                    <a href="contact.html">Read More →</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="design">
+            <img src="create.jpeg" alt="Creative design workspace">
+            <div class="blog-content">
+                <span class="category">DESIGN</span>
+                <h3>Why Good Design Matters for Small Businesses</h3>
+                <p>Professional design helps your business appear consistent, attract attention and communicate its value.</p>
+                <div class="blog-meta">
+                    <span>8 September 2026</span>
+                    <a href="contact.html">Read More →</a>
+                </div>
+            </div>
+        </article><script>
+    const filterButtons = document.querySelectorAll(".filter");
+    const blogCards = document.querySelectorAll(".blog-card");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+          
+            this.classList.add("active");
+
+            
+            const selectedFilter = this.getAttribute("data-filter");
+
+            blogCards.forEach(card => {
+                const category = card.getAttribute("data-category");
+
+                if (selectedFilter === "all" ||
+                    category === selectedFilter) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+        });
+    });
+</script>
+
+    </div>
+</main>
+
+  <footer id="contact">
+    Tshepo Mighty Creative Agency · Talk to us about your next project
+  </footer>
+</body>
+</html>
+      

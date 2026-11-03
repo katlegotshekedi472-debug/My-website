@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>our work</title>
+  <link rel="stylesheet" type="text/css" href="tshepo.css">
+</head>
+<body>
+  <div class="topbar">TALK NOW</div>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img src="tshepo logo.png" width="100"height="100">
+      </a>
+
+      <nav aria-label="Main navigation">
+         <a href="index.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="service.html">Service</a>
+        <a href="our work.html"class="active"aria-current="page">Our Work</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>      
+      </nav>
+    </div>
+  </header>
+
+     <a href="contact.html" class="quote-btn">Get a Quote</a>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our <span>Work</span></h1>
+            <p>
+                Here are some of the projects we have created for our clients.
+                <br>
+                We bring ideas to life through creative design and quality production.
+            </p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <main class="portfolio">
+
+        <!-- Category Filters -->
+        <div class="filters">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="graphic">Graphic Design</button>
+            <button class="filter" data-filter="branding">Branding</button>
+            <button class="filter" data-filter="video">Video Production</button>
+            
+        </div>
+
+        <!-- Portfolio Projects -->
+        <div class="project-grid">
+
+            <article class="project-card" data-category="video">
+                <img src="studio.jpeg"
+                     alt="Professional video production studio">
+                <h3>Promotional Video</h3>
+                <p>Video Production</p>
+            </article>
+
+            <article class="project-card" data-category="branding">
+                <img src="branded logo.jpeg"
+                     alt="Natura skincare logo and brand identity">
+                <h3>Brand Logo &amp; Identity</h3>
+                <p>Branding</p>
+            </article>
+
+            <article class="project-card" data-category="graphic">
+                <img src="product packaging.jpeg"
+                    
+                <h3>Product Packaging</h3>
+                <p>Graphic Design</p>
+            </article>
+
+            <article class="project-card" data-category="graphic">
+                <img src="poster.jpeg"
+                   
+                <h3>Advertising Poster</h3>
+                <p>Graphic Design</p>
+            </article>
+
+            <article class="project-card" data-category="print">
+                <img src="menu.jpeg"
+                     alt="Restaurant menu design">
+                <h3>Restaurant Menu</h3>
+                <p>Print Media</p>
+            </article>
+
+            <article class="project-card" data-category="branding">
+                <img src="branded material.jpeg"
+                     alt="Branded T-shirt, cap and mug">
+                <h3>Branded Materials</h3>
+                <p>Branding</p>
+            </article>
+
+    
+
+            <article class="project-card" data-category="video">
+                <img src="computer2.jpeg"
+                     alt="Video editing workstation and timeline">
+                <h3>Video Editing</h3>
+                <p>Video Production</p>
+            </article>
+
+            <script>
+    const filterButtons = document.querySelectorAll(".filter");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            // Highlight the clicked button
+            this.classList.add("active");
+
+            // Get the selected category
+            const selectedFilter = this.getAttribute("data-filter");
+
+            // Show or hide projects
+            projectCards.forEach(card => {
+                const category = card.getAttribute("data-category");
+
+                if (selectedFilter === "all" ||
+                    category === selectedFilter) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+        });
+    });
+</script>
+
+        </div>
+    </main>
+    <footer id="contact">
+    Tshepo Mighty Creative Agency · Talk to us about your next project
+  </footer>
+
+</body>
+</html>
+      
